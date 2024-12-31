@@ -4,3 +4,5 @@
 # vite + vue3 + Element Plus 
 
 # node -v 18.14.2
+
+# request axios
