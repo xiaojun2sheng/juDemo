@@ -8,6 +8,8 @@
         <el-upload
           drag
           multiple
+          :multiple="false"
+          :before-upload="beforeUpload"
         >
           <el-icon class="el-icon--upload"><upload-filled /></el-icon>
           <div class="el-upload__text">
@@ -39,6 +41,17 @@ import { testApi, testPostApi } from '@/api/index.js'
 
 onMounted(() => {
 })
+
+const beforeUpload = async (file) => {
+  let formdata = new FormData()
+  formdata.append('file', file)
+  const res = await testPostApi({
+    data: formdata,
+      headers: {
+        'Content-Type': 'multipart/form-data;charset=UTF-8',
+      }
+  })
+}
 
 const testGet = async () => {
   const res = await testApi({
