@@ -1,7 +1,8 @@
 import axios from "axios";
+const env = import.meta.env
 
 const Api = axios.create({
-  baseURL: 'http://localhost:3000/', // 域名配置，可添加变量配置文件定义
+  baseURL: env.VITE_BASE_API,
   headers: {
     post: {
       'Content-Type': 'application/json',

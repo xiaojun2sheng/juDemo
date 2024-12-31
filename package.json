@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode develop",
+    "pro": "vite --mode production",
     "build": "vite build",
-    "preview": "vite preview"
+    "build_dev": "vite build --mode develop",
+    "preview": "vite preview",
+    "develop": "vite --mode develop",
+    "production": "vite --mode production"
   },
   "dependencies": {
     "axios": "^1.7.9",
