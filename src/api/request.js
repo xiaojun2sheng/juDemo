@@ -34,7 +34,6 @@ function errorHandle(response) {
 function successHandle(response) {
   switch (response.status) {
     case 200:
-      //
       return response.data;
     // ....
     default:
@@ -56,7 +55,7 @@ Api.interceptors.request.use(
 
 Api.interceptors.response.use(
   (response) => {
-    successHandle(response);
+    return successHandle(response);
   },
   (err) => {
     errorHandle(err);
