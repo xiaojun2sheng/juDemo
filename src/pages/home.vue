@@ -11,14 +11,14 @@
           >
             <el-button type="primary" :icon="UploadFilled">上传要识别的图片</el-button>
           </el-upload>
-        </div>
-        <br/>
-        <div>
-          <el-progress :percentage="score" color="#1989fa" />
+          <div class="point_desc">精准度调整{{ score }}%</div>
+          <!-- <el-progress :percentage="score" color="#1989fa" /> -->
           <el-button-group>
             <el-button :icon="Minus" @click="decrease" />
             <el-button :icon="Plus" @click="increase" />
           </el-button-group>
+        </div>
+        <div class="config_box">
         </div>
       </el-card>
       <br/>
@@ -111,6 +111,12 @@ const fileToImgSrc = (file) => {
       .upload_box_content {
         width: 100%;
         height: 20px;
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        .point_desc {
+          margin-left: 20px;
+        }
       }
       // .upload_box_img {
       //   max-width: 100%;
